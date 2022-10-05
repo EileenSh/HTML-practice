@@ -1,0 +1,91 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=<>, initial-scale=1.0">
+    <title>Forms</title>
+</head>
+<body>
+    <h1>Travel Suggestions</h1>
+    <!--
+            the form tag is used to create a container where all the imputs for a form must be put inside.
+            the attributes that are required are name, id, and method.
+
+            name gives some descriptive information about what the form will be used for.
+
+            id allows us to reference this form later in fieldsets and other areas of our code.
+
+            method has two typical values: get and post. get is used for forms that do not ask personal information(search bars, etc).
+            Post is used for forms that ask for personal information(login and signup pages, etc)
+        -->
+    <form name="user-travel-suggestions" id="travel-suggestion" method="get">
+        <!--
+            this is a text input. type="text", name, and id are all required attributes.
+            the required attribute is only neccesary when you want to make sure the user has to fill in the input before submittint the form.
+
+            the type attribute defines the type of input.
+            the name attribut defines the variable name that would be used for the input when the data gets passed to the server(requires back-end 
+            scripting, which is beyond the scope of this course).
+            the id attribute allows us to reference the input rom the label and form other parts of our code.
+
+            all inputs need a label with the for attribute that links the label to the input using the input's id attribut.
+            when an input is required, itis important to includethe word required in the label's text.
+        -->
+        <label for="travel-location">Please Enter the City or Country You Suggest I Travel <to required="required">1</to>:</label>
+        <input type="text" name="destination" id="travel-location" required />
+
+        <!--
+            this is an email input. it requires type, name, and id.
+
+            optional attribues are minlength to define the minimum length entered by the user
+            and maxlength to define the maximum length entered
+        -->
+        <!--
+            <label for="email-address">Please Enter Your E-mail Address:</label>
+        <input type="email" name="email" id="email-address" minlength="6" maxlength="40" />
+        -->
+        <label for="reset">Reset</label>
+        <input type="reset" name="reset" id="reset"  />
+
+        <label for="story">Tell us your story:</label>
+
+        <textarea id="story" name="story" rows="5" cols="33"></textarea>
+        <!--
+            this is a password input. type="password", name, and id are all required attributes.
+            as always. each input needs a label with the for attribute to link the label to an input.
+
+            i have commented this input out because i will not be needing a password input for this form.
+        -->
+        <!--
+            <label for="password">Please Enter Your Password:</label>
+            <input type="password" name="userPassword" id="password" />
+        -->
+        <label for="password">Please Enter Your Passwaord:</label>
+        <input type="password" name="userPassword" id="password" />
+
+        <fieldset form="travel">
+            <!--
+                a legend describes how the inputs inside the fieldset are all related.
+            -->
+            <legend>What travel items would you recommend I bring on the trip?</legend>
+
+            <!--
+                this is a checkbox input. note, this is an input where q2
+            -->
+
+            <input type="checkbox" name="waterBottle" id="bottle" value="bottle" />
+            <label for="bottle">Refillable Water Bottle</label>
+            <br />
+
+            <input type="checkbox" name="hat" id="travel-hat" value="hat" />
+            <label for="travel-hat">A Hat</label>
+            <br />
+
+            <input type="checkbox" name="backpack" id="backpack" value="pack" />
+            <label for="backpack">A Backpack</label>
+            <br />
+        </fieldset>
+    </form>
+</body>
+</html>
